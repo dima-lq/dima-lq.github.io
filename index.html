@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hello to my site!</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		:root {
+			--background-color: #fff;
+			--text-color: #000;
+			--text-shadow-color: #fff;
+		}
+
+		@media (prefers-color-scheme: dark) {
+			:root {
+				--background-color: #000;
+				--text-color: #fff;
+				--text-shadow-color: #000;
+			}
+		}
+
+		body {
+			font-family: Arial, sans-serif;
+			background-color: var(--background-color);
+			color: var(--text-color);
+			margin: 0;
+		}
+
+		h1 {
+			font-size: 4rem;
+			text-align: center;
+			padding-top: 5rem;
+			color: inherit;
+			text-shadow: 0 0 10px var(--text-shadow-color);
+		}
+
+		p {
+			font-size: 2rem;
+			text-align: center;
+			margin-top: 2rem;
+			color: inherit;
+			text-shadow: 0 0 5px var(--text-shadow-color);
+		}
+	</style>
+	<script>
+		if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+			document.documentElement.style.setProperty('--background-color', '#000');
+			document.documentElement.style.setProperty('--text-color', '#fff');
+			document.documentElement.style.setProperty('--text-shadow-color', '#000');
+		}
+	</script>
+</head>
+<body>
+	<h1>Welcome to DIMA LQ site</h1>
+	<p>Site under development.</p>
+</body>
+</html>
