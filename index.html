@@ -1,57 +1,75 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Hello to my site!</title>
+	<title>My Website</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style>
-		:root {
-			--background-color: #fff;
-			--text-color: #000;
-			--text-shadow-color: #fff;
+		/* Внешний вид вкладок */
+		.tab {
+			display: inline-block;
+			background-color: #f1f1f1;
+			border: 1px solid #ccc;
+			border-radius: 4px 4px 0 0;
+			padding: 10px 20px;
+			cursor: pointer;
+			user-select: none;
 		}
 
-		@media (prefers-color-scheme: dark) {
-			:root {
-				--background-color: #000;
-				--text-color: #fff;
-				--text-shadow-color: #000;
-			}
+		/* Стиль выбранной вкладки */
+		.active-tab {
+			background-color: #ccc;
 		}
 
-		body {
-			font-family: Arial, sans-serif;
-			background-color: var(--background-color);
-			color: var(--text-color);
-			margin: 0;
+		/* Скрытый контент */
+		.tab-content {
+			display: none;
+			padding: 20px;
+			border: 1px solid #ccc;
+			border-top: none;
+			border-radius: 0 0 4px 4px;
 		}
 
-		h1 {
-			font-size: 4rem;
-			text-align: center;
-			padding-top: 5rem;
-			color: inherit;
-			text-shadow: 0 0 10px var(--text-shadow-color);
-		}
-
-		p {
-			font-size: 2rem;
-			text-align: center;
-			margin-top: 2rem;
-			color: inherit;
-			text-shadow: 0 0 5px var(--text-shadow-color);
+		/* Показать выбранный контент */
+		.active-content {
+			display: block;
 		}
 	</style>
-	<script>
-		if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-			document.documentElement.style.setProperty('--background-color', '#000');
-			document.documentElement.style.setProperty('--text-color', '#fff');
-			document.documentElement.style.setProperty('--text-shadow-color', '#000');
-		}
-	</script>
 </head>
 <body>
-	<h1>Welcome to DIMA LQ site</h1>
-	<p>Site under development.</p>
+	<!-- Вкладки -->
+	<div>
+		<div class="tab active-tab" onclick="openTab(event, 'home')">Home</div>
+		<div class="tab" onclick="openTab(event, 'about')">About me</div>
+	</div>
+
+	<!-- Контент вкладок -->
+	<div id="home" class="tab-content active-content">
+		<h1>Welcome to my website</h1>
+		<p>This is the main content of my website.</p>
+	</div>
+	<div id="about" class="tab-content">
+		<h1>About me</h1>
+		<p>I live in Ukraine. I love to play games, and my favorite thing is torturing my phone firmware.</p>
+	</div>
+
+	<!-- Скрипт для переключения вкладок -->
+	<script>
+		function openTab(evt, tabName) {
+			// Получить все элементы с классом "tab" и удалить класс "active-tab"
+			var tabs = document.getElementsByClassName("tab");
+			for (var i = 0; i < tabs.length; i++) {
+				tabs[i].classList.remove("active-tab");
+			}
+			// Получить все элементы с классом "tab-content" и скрыть их
+			var contents = document.getElementsByClassName("tab-content");
+			for (var i = 0; i < contents.length; i++) {
+				contents[i].style.display = "none";
+			}
+			// Добавить класс "active-tab" к выбранной вкладке и показать соответствующий контент
+			evt.currentTarget.classList.add("active-tab");
+			document.getElementById(tabName).style.display = "block";
+		}
+	</script>
 </body>
 </html>
