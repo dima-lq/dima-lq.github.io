@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dima's Biography</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+<style>
+  body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('img/white.png'); /* По умолчанию светлый фон */
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: background-image 0.3s ease;
+  }
+
+  #window {
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 70%;
+    max-width: 600px;
+    padding: 20px;
+    position: relative;
+  }
+
+  #title-bar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 10px;
+    position: relative;
+  }
+
+  #close-btn, #minimize-btn, #fullscreen-btn {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin-right: 5px;
+    cursor: pointer;
+    border: 1px solid transparent;
+  }
+
+  #close-btn {
+    background-color: #ff5f57;
+  }
+
+  #minimize-btn {
+    background-color: #ffbd2e;
+  }
+
+  #fullscreen-btn {
+    background-color: #28ca41;
+  }
+
+  #close-btn:hover, #minimize-btn:hover, #fullscreen-btn:hover {
+    border-color: rgba(0, 0, 0, 0.2);
+  }
+</style>
+<script>
+  const prefersDarkTheme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+  document.addEventListener("DOMContentLoaded", function() {
+    const windowElement = document.getElementById("window");
+    const bodyElement = document.body;
+
+    if (prefersDarkTheme) {
+      windowElement.style.backgroundColor = "#222";
+      bodyElement.style.backgroundColor = "#222";
+      windowElement.style.color = "#fff";
+      bodyElement.style.backgroundImage = "url('img/black.png')";
+    } else {
+      windowElement.style.backgroundColor = "#fff";
+      bodyElement.style.backgroundColor = "#f0f0f0";
+      windowElement.style.color = "#000";
+      bodyElement.style.backgroundImage = "url('img/white.png')";
+    }
+  });
+</script>
+</head>
+<body>
+<div id="window">
+  <div id="title-bar">
+    <div id="close-btn"></div>
+    <div id="minimize-btn"></div>
+    <div id="fullscreen-btn"></div>
+  </div>
+  <h1>About Me</h1>
+  <p>Name: Dima</p>
+  <p>Age: 11</p>
+  <p>Location: Ukraine</p>
+  <p>City: Lutsk</p>
+  <p>Telegram/Discord: @dimalq<p>
+  <p>Tik Tok: @dimalq_real<p>
+</div>
+</body>
+</html>
