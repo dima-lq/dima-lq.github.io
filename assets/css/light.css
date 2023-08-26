@@ -1,0 +1,12 @@
+:root {
+    --background: url(../images/white.jpg);
+    --main-brd: #00000050;
+    --nv-pnl-background: #ffffff2c;
+    --main-background: #ffffffc2;
+    --main-txt-color: #000000e5;
+    --container: #97979733;
+    --separator: #00000050;
+    --txt-color: #000000;
+    --tbl-info: #0000007c;
+    --default-color: #3e94fc;
+}

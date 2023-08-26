@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+* {
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 200;
+    color: var(--txt-color);
+}
+a {
+    text-decoration: none;
+}
+body {
+    margin: 0; 
+    background: var(--background);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100%;
+    background-size: cover;
+    transition: 0.1s ease-in-out;
+}
+main {
+    display: flex;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    width: 715px;
+    height: 360px;
+    border-radius: 10px;
+    border: 1px solid var(--main-brd);
+    box-shadow: 0 10px 40px 0px #000000;
+    z-index: 3;
+}
+/* -------------------------------------------------------------------------------- */
+.nv-pnl {
+    border-radius: 10px 0 0 10px;
+    padding: 10px;
+    text-align: center;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(20px);
+    background-color: var(--nv-pnl-background);
+    width: 190px;
+    transition: 0.2s ease-in-out;
+}
+.nv-pnl li a {
+    border-radius: 6px;
+    padding: 4px 8px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+.nv-lnk {
+    color: white;
+    font-weight: 300;
+    margin: 0 8px
+}
+.nv-pnl li a svg {
+    width: 14px;
+    height: 14px;
+    fill: var(--default-color);
+}
+.nv-pnl li a:hover {
+    background-color: var(--nv-pnl-background);
+}
+.nv-pnl li a.active {
+    background-color: var(--default-color);
+}
+.nv-pnl li a.active .nv-lnk {
+    color: white;
+}
+.nv-pnl li a.active svg {
+    fill: white;
+}
+.st-br-btn {
+    margin: 10px;
+    display: inline-flex;
+}
+.red {
+    border: 1px solid #d1514a;
+    cursor: pointer;
+    border-radius: 50%;
+    margin: 0 8px 0 0;
+    background-color: #fe625a;
+    width: 12px;
+    height: 12px;
+    transition: 0.1s;
+}
+.yellow {
+    border: 1px solid #ca9624;
+    cursor: pointer;
+    border-radius: 50%;
+    margin: 0 8px 0 0;
+    background-color: #fcba2d;
+    width: 12px;
+    height: 12px;
+    transition: 0.1s;
+}
+.green {
+    border: 1px solid #1f9b31;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #27c73e;
+    width: 12px;
+    height: 12px;
+    transition: 0.1s;
+}
+.red:active, .green:active, .yellow:active {
+    transform: scale(0.90);
+    transition: 0.1s;
+}
+.red:hover {
+    background-color: #fe625ac0;
+    transition: 0.1s;
+}
+.yellow:hover {
+    background-color: #fcba2dc0;
+    transition: 0.1s;
+}
+.green:hover {
+    background-color: #27c73ec0;
+    transition: 0.1s;
+}
+/* -------------------------------------------------------------------------------- */
+.main-cn {
+    display: flex;
+}
+.main-zn {
+    overflow: auto;
+    border-radius: 0 0 10px 0;
+    display: flex;
+    backdrop-filter: blur(20px);
+    background-color: var(--main-background);
+    width: 525px;
+    box-sizing: content-box;
+    margin: 53px 0 0 0;
+    flex-wrap: wrap;
+}
+.main-zn::-webkit-scrollbar {
+    width: 5px;
+}
+.main-zn::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+.main-zn::-webkit-scrollbar-thumb {
+    background-color: var(--container);
+    border-radius: 10px;
+}
+.st-br-main {
+    border-bottom: 1px solid var(--main-brd);
+    width: 525px;
+    position: fixed;
+    display: flex;
+    border-radius: 0 10px 0 0;
+    height: auto;
+    backdrop-filter: blur(20px);
+    background-color: var(--main-background);
+    z-index: 2;
+}
+h3 {
+    padding: 0 32px;
+    font-weight: normal;
+    color: var(--main-txt-color);
+    font-size: 16px;
+}
+.container {
+    position: relative;
+    border-radius: 6px;
+    background-color: var(--container);
+    width: 100%;
+    margin: 0 20px 20px 20px;
+    padding: 10px;
+    box-shadow: 0 0 0 1px var(--main-brd);
+}
+.txt-info {
+    font-weight: normal;
+    margin: 0 0 8px 30px;
+}
+.txt-info-main {
+    font-weight: normal;
+    margin: 10px 0 8px 30px;
+}
+td, th {
+    font-weight: 300;
+    padding: 5px 12px 5px 0;
+    text-align: start;
+}
+.tbl-info {
+    font-weight: normal;
+    color: var(--tbl-info);
+}
+.frd-lnk {
+    border-radius: 5px;
+    margin: 5px;
+    width: 88px;
+    height: 31px;
+}
